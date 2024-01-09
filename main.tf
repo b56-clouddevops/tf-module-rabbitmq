@@ -18,8 +18,8 @@ resource "null_resource" "app_install" {
     # connection block establishes connection to this
     connection {
       type     = "ssh"
-      user     = local.SSH_USER
-      password = local.SSH_PASS
+      user     = "centos"
+      password = "DevOps321"
       host     = aws_spot_instance_request.allows_rabbitmq.private_ip             # aws_instance.sample.private_ip : Use this only if your provisioner is outside the resource.
     }
 
