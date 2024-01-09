@@ -8,6 +8,12 @@ data "terraform_remote_state" "vpc" {
   }
 }
 
+data "aws_ami" "ami" {
+  most_recent      = true
+  name_regex       = "centos7-with-ansible"
+  owners           = ["355449129696"]
+}
+
 # Extracting the information of the secret
 data "aws_secretsmanager_secret" "secrets" {
   name = "roboshop/secrets"
